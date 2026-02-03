@@ -41,7 +41,7 @@ public class Main{
 
         ArrayList<String> colors = new ArrayList<>(Arrays.asList("Green", "Purple", "Blue", "Pink"));
         for (int i = 0; i<colors.size(); i++){
-            colors.set(i, "Blackx2");
+            colors.set(i, "Blackx3");
         }
         System.out.println(colors);
     }
