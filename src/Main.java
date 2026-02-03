@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.ArrayDeque;
 public class Main{
     public static void main(String [] args){
         //Task1
@@ -242,6 +243,158 @@ public class Main{
 
 
         //Set, Stack, Queue tasks
-        //Task 1
+// Таск 1
+        int[] nums = {1, 2, 2, 3, 4, 4, 4, 5};
+        HashSet<Integer> uniqueNums = new HashSet<>();
+        for (int n : nums) {
+            uniqueNums.add(n);
+        }
+        System.out.println(uniqueNums);
+
+// Таск 2
+        HashSet<String> users = new HashSet<>(Arrays.asList("admin", "user", "guest"));
+        String name = "admin";
+        System.out.println(users.contains(name));
+
+// Таск 3
+        HashSet<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(3);
+        System.out.println(set.size());
+        set.clear();
+        System.out.println(set.isEmpty());
+
+// Таск 4
+        HashSet<String> namesOther = new HashSet<>(Arrays.asList("Anna", "Bob", "Tom", "Alex", "John"));
+        boolean removed = namesOther.remove("Tom");
+        System.out.println(removed);
+        System.out.println(namesOther);
+
+// Таск 5
+        HashSet<Integer> set1 = new HashSet<>(Arrays.asList(1, 2, 3));
+        HashSet<Integer> set2 = new HashSet<>(Arrays.asList(3, 4, 5));
+        set1.addAll(set2);
+        System.out.println(set1);
+
+// Таск 6
+        HashSet<Integer> setA = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+        HashSet<Integer> setB = new HashSet<>(Arrays.asList(3, 4));
+        setA.removeAll(setB);
+        System.out.println(setA);
+
+// Таск 7
+        HashSet<Integer> setX = new HashSet<>(Arrays.asList(1, 2, 3, 4));
+        HashSet<Integer> setY = new HashSet<>(Arrays.asList(3, 4, 5));
+        setX.retainAll(setY);
+        System.out.println(setX);
+
+// Таск 8
+        System.out.println(setY.containsAll(setX));
+
+// Таск 9
+        String sentence = "java is fun and java is powerful";
+        String[] wordsOther= sentence.split(" ");
+        HashSet<String> uniqueWords = new HashSet<>();
+        for (String w : wordsOther) {
+            uniqueWords.add(w);
+        }
+        System.out.println(uniqueWords);
+
+// Таск 10
+        String[] mix = {"Apple", "apple", "APPLE", "Banana"};
+        HashSet<String> lower = new HashSet<>();
+        for (String w : mix) {
+            lower.add(w.toLowerCase());
+        }
+        System.out.println(lower);
+
+// Таск 11
+        ArrayDeque<Integer> queue = new ArrayDeque<>();
+        queue.offer(1);
+        queue.offer(2);
+        queue.offer(3);
+        System.out.println(queue.peek());
+        while (!queue.isEmpty()) {
+            System.out.println(queue.poll());
+        }
+
+// Таск 12
+        ArrayDeque<String> stack = new ArrayDeque<>();
+        stack.push("A");
+        stack.push("B");
+        stack.push("C");
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop());
+        }
+
+// Таск 13
+        ArrayDeque<Integer> deque = new ArrayDeque<>();
+        deque.addFirst(2);
+        deque.addLast(3);
+        deque.addFirst(1);
+        System.out.println(deque);
+
+// Таск 14
+        System.out.println(deque.offerFirst(0));
+        System.out.println(deque.offerLast(4));
+        System.out.println(deque);
+
+// Таск 15
+        System.out.println(deque.peek());
+        System.out.println(deque.peekFirst());
+        System.out.println(deque.peekLast());
+        deque.clear();
+        System.out.println(deque.peek());
+
+// Таск 16
+        deque.add(1);
+        deque.add(2);
+        deque.add(3);
+        while (!deque.isEmpty()) {
+            System.out.println(deque.poll());
+        }
+
+// Таск 17
+        ArrayDeque<String> dq = new ArrayDeque<>();
+        dq.add("a");
+        dq.add("b");
+        dq.add("c");
+        dq.add("b");
+        dq.add("a");
+        dq.removeFirstOccurrence("b");
+        System.out.println(dq);
+        dq.removeLastOccurrence("a");
+        System.out.println(dq);
+
+// Таск 18
+        dq.add("x");
+        System.out.println(dq.size());
+        System.out.println(dq.isEmpty());
+        dq.remove();
+        System.out.println(dq.size());
+        System.out.println(dq.isEmpty());
+
+// Таск 19
+        dq.add("test");
+        dq.clear();
+        System.out.println(dq.peek());
+        System.out.println(dq.isEmpty());
+
+// Таск 20
+        String text = "level";
+        ArrayDeque<Character> pal = new ArrayDeque<>();
+        for (char c : text.toCharArray()) {
+            pal.add(c);
+        }
+        boolean palindrome = true;
+        while (pal.size() > 1) {
+            if (pal.pollFirst() != pal.pollLast()) {
+                palindrome = false;
+                break;
+            }
+        }
+        System.out.println(palindrome);
+
     }
 }
