@@ -242,7 +242,7 @@ public class Main{
         System.out.println(departments);
 
 
-        //Set, Stack, Queue tasks
+        //Set, Stack, Queue taskst
 // Таск 1
         int[] nums = {1, 2, 2, 3, 4, 4, 4, 5};
         HashSet<Integer> uniqueNums = new HashSet<>();
@@ -293,7 +293,7 @@ public class Main{
         System.out.println(setY.containsAll(setX));
 
 // Таск 9
-        String sentence = "java is fun and java is powerful";
+        String sentence = "java is our course language and java is pretty interesting";
         String[] wordsOther= sentence.split(" ");
         HashSet<String> uniqueWords = new HashSet<>();
         for (String w : wordsOther) {
